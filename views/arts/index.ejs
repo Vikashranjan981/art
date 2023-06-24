@@ -1,0 +1,25 @@
+<%layout('layouts/boilerplate')%>
+    <h1>All Arts</h1>
+   
+     
+    <% for( art of arts ) { %>
+       
+         <div class="card mt-3" >
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" width="100%" src="<%=art.images[0].url%>" alt="not able to show">
+                </div>
+                
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=art.title%></h5>
+                        <p class="card-text"><%=art.description%></p>
+                        <p class="card-text"><%=art.price%></p>
+                        <a  class="btn btn-primary"  href="/arts/<%=art._id%>">view <%=art.title%></a>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+        <% } %>
+
