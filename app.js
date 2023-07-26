@@ -2,7 +2,7 @@ if(process.env.NODE_ENV!=="production")
 {
     require('dotenv').config();
 }
-//console.log(process.env.SECRET);
+
 const port=process.env.port || 3000;
 const express = require('express');
 
@@ -21,9 +21,7 @@ const passport=require('passport');
 const LocalStrategy=require('passport-local');
 const User=require('./models/user');
 
-//7sSZWadKjJ9MZrOM
-//WlzTCPEYpG4x0m00
-//mongodb+srv://<username>:<password>@cluster0.i0q1nh6.mongodb.net/
+
 const artsRoutes=require('./routes/art');
 const reviewsRoutes=require('./routes/reviews');
 const userRoutes=require('./routes/users');
