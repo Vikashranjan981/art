@@ -30,13 +30,9 @@ module.exports.renderLogIn=(req,res)=>{
     const redirectUrl = res.locals.returnTo || '/arts';
     res.redirect(redirectUrl);
     }
-
-    module.exports.logout=(req, res, next) => {
-        req.logout(function (err) {
-            if (err) {
-                return next(err);
-            }
-            req.flash('success', 'Goodbye!');
-            res.redirect('/arts');
-        });
-    }
+      module.exports.logout=async (req,res,next)=>{
+    req.logout()
+    req.flash('success','Goodbye! See you soon again')
+    res.redirect('/arts')
+}
+   
